@@ -1,0 +1,182 @@
+
+.civic-register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 18px;
+  background:
+    radial-gradient(ellipse at 85% 10%, #e0f3e7 0%, transparent 40%),
+    #f6f9f7;
+  color: #263b30;
+}
+
+.civic-register-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 470px;
+  padding: 34px;
+  border: 1px solid #e1e9e3;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 15px 45px rgba(38, 59, 48, 0.08);
+}
+
+.civic-register-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #16845b;
+  font-size: 21px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.civic-register-brand-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #e8f5ee;
+  font-size: 20px;
+}
+
+.civic-register-heading {
+  margin: 27px 0 23px;
+}
+
+.civic-register-heading > span {
+  color: #16845b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.civic-register-heading h1 {
+  margin: 9px 0;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.civic-register-heading p {
+  margin: 0;
+  color: #6b7c72;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.civic-register-form {
+  display: grid;
+  gap: 16px;
+}
+
+.civic-register-field {
+  display: grid;
+  gap: 8px;
+}
+
+.civic-register-field label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.civic-register-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 0 12px;
+  border: 1px solid #dce6df;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.civic-register-input:focus-within {
+  border-color: #16845b;
+  box-shadow: 0 0 0 3px rgba(22, 132, 91, 0.1);
+}
+
+.civic-register-input > svg {
+  flex-shrink: 0;
+  color: #7b8981;
+}
+
+.civic-register-input input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #263b30;
+  font: inherit;
+  font-size: 14px;
+}
+
+.civic-register-input input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.civic-register-submit {
+  min-height: 46px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 9px;
+  background: #16845b;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.civic-register-submit:hover:not(:disabled) {
+  background: #116b49;
+}
+
+.civic-register-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.civic-register-error {
+  padding: 11px;
+  border-radius: 8px;
+  background: #fdecec;
+  color: #b42318;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.civic-register-login {
+  margin: 22px 0 0;
+  color: #6b7c72;
+  font-size: 13px;
+  text-align: center;
+}
+
+.civic-register-login a {
+  color: #16845b;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.civic-register-login a:hover {
+  color: #116b49;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .civic-register-card {
+    padding: 24px 19px;
+  }
+
+  .civic-register-heading h1 {
+    font-size: 25px;
+  }
+}

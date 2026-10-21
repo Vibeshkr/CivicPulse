@@ -1,0 +1,367 @@
+.report-issue-page {
+  min-height: 100vh;
+  padding: 36px 20px 64px;
+  background: #f6f9f7;
+  color: #263b30;
+}
+
+.report-issue-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.report-issue-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 28px;
+  color: #16845b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.report-issue-back:hover {
+  color: #116b49;
+}
+
+.report-issue-header {
+  margin-bottom: 32px;
+}
+
+.report-issue-eyebrow {
+  color: #16845b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.report-issue-header h1 {
+  margin: 10px 0;
+  font-size: clamp(27px, 4vw, 38px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.report-issue-header p {
+  max-width: 700px;
+  margin: 0;
+  color: #6b7c72;
+  line-height: 1.8;
+}
+
+.report-issue-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(270px, 0.8fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.report-issue-form {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.report-issue-section,
+.report-issue-info-card,
+.report-issue-tip-card {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid #e1e9e3;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(38, 59, 48, 0.04);
+}
+
+.report-issue-section h2,
+.report-issue-info-card h3,
+.report-issue-tip-card h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.report-issue-section-description {
+  margin: 0 0 24px;
+  color: #6b7c72;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.report-issue-field {
+  display: grid;
+  gap: 9px;
+  margin-bottom: 22px;
+  min-width: 0;
+}
+
+.report-issue-field:last-child {
+  margin-bottom: 0;
+}
+
+.report-issue-field label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #263b30;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.report-issue-field input,
+.report-issue-field select,
+.report-issue-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #dce6df;
+  border-radius: 9px;
+  background: #fff;
+  color: #263b30;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-issue-field input:focus,
+.report-issue-field select:focus,
+.report-issue-field textarea:focus {
+  border-color: #16845b;
+  box-shadow: 0 0 0 3px rgba(22, 132, 91, 0.1);
+}
+
+.report-issue-field textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.report-issue-character-count,
+.report-issue-hint {
+  color: #7b8981;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.report-issue-error {
+  color: #b42318;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.report-issue-upload {
+  position: relative;
+  display: flex;
+  min-height: 155px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border: 1.5px dashed #b7d5c3;
+  border-radius: 12px;
+  background: #f8fbf9;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.report-issue-upload:hover {
+  border-color: #16845b;
+  background: #f0f8f3;
+}
+
+.report-issue-upload > svg {
+  width: 27px;
+  height: 27px;
+  color: #16845b;
+}
+
+.report-issue-upload strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.report-issue-upload span {
+  color: #7b8981;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.report-issue-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.report-issue-upload:focus-within {
+  outline: 2px solid #16845b;
+  outline-offset: 3px;
+}
+
+/* Selected image or video preview */
+
+.report-issue-media-preview {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #e1e9e3;
+  border-radius: 12px;
+  background: #f8fbf9;
+}
+
+.report-issue-media-preview img,
+.report-issue-media-preview video {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  border-radius: 8px;
+  background: #eef2ef;
+  object-fit: contain;
+}
+
+.report-issue-media-preview img {
+  height: auto;
+}
+
+.report-issue-media-preview video {
+  aspect-ratio: 16 / 9;
+}
+
+.report-issue-media-preview p,
+.report-issue-media-preview small {
+  margin: 0;
+  color: #6b7c72;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.report-issue-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 48px;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #16845b;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.report-issue-submit:hover:not(:disabled) {
+  background: #116b49;
+  transform: translateY(-1px);
+}
+
+.report-issue-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.report-issue-disclaimer {
+  margin: -10px 0 0;
+  color: #7b8981;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.report-issue-sidebar {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.report-issue-info-icon {
+  display: flex;
+  width: 43px;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+  border-radius: 12px;
+  background: #e8f5ee;
+  color: #16845b;
+}
+
+.report-issue-info-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.report-issue-info-card ol,
+.report-issue-tip-card ul {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: #5f7167;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.report-issue-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.report-issue-message svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.report-issue-message-success {
+  background: #e8f5ee;
+  color: #116b49;
+}
+
+.report-issue-message-error {
+  background: #fdecec;
+  color: #b42318;
+}
+
+@media (max-width: 760px) {
+  .report-issue-page {
+    padding: 24px 15px 44px;
+  }
+
+  .report-issue-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .report-issue-section,
+  .report-issue-info-card,
+  .report-issue-tip-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .report-issue-page {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .report-issue-section,
+  .report-issue-info-card,
+  .report-issue-tip-card {
+    padding: 16px;
+  }
+}

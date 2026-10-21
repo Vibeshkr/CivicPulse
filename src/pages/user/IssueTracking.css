@@ -1,0 +1,617 @@
+.issue-tracking-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+  color: #263b30;
+}
+
+.it-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+  padding: 30px;
+  border: 1px solid #e1e9e3;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(38, 59, 48, 0.04);
+}
+
+.it-eyebrow {
+  margin: 0 0 8px;
+  color: #16845b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.it-header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.3;
+}
+
+.it-header > div:first-child > p:not(.it-eyebrow) {
+  max-width: 620px;
+  margin: 0 0 16px;
+  color: #6b7c72;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.it-back-link,
+.it-explore-link,
+.it-card-footer a,
+.it-empty a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #16845b;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.it-back-link:hover,
+.it-explore-link:hover,
+.it-card-footer a:hover,
+.it-empty a:hover {
+  color: #116b49;
+}
+
+.it-header-icon {
+  display: flex;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #e8f5ee;
+  color: #16845b;
+  font-size: 27px;
+}
+
+.it-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 24px;
+}
+
+.it-summary article {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #e1e9e3;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(38, 59, 48, 0.035);
+}
+
+.it-summary-icon {
+  display: flex;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #fff3df;
+  color: #946117;
+  font-size: 19px;
+}
+
+.it-summary-orange {
+  background: #fff3df;
+  color: #946117;
+}
+
+.it-summary-blue {
+  background: #edf3ff;
+  color: #315ca8;
+}
+
+.it-summary-green {
+  background: #e8f5ee;
+  color: #116b49;
+}
+
+.it-summary article p {
+  margin: 0 0 6px;
+  color: #6b7c72;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.it-summary article h2 {
+  margin: 0;
+  color: #263b30;
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+.it-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid #f0dfb7;
+  border-radius: 11px;
+  background: #fff8e8;
+  color: #795b1c;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.it-notice > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.it-notice p {
+  margin: 6px 0 0;
+}
+
+.it-notice strong {
+  font-weight: 700;
+}
+
+.it-notice-closed {
+  border-color: #f0c9c5;
+  background: #fff0ef;
+  color: #a12b22;
+}
+
+.it-list-section {
+  padding: 25px;
+  border: 1px solid #e1e9e3;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.it-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 21px;
+}
+
+.it-section-heading h2 {
+  margin: 0 0 7px;
+  font-size: 19px;
+}
+
+.it-section-heading p {
+  margin: 0;
+  color: #6b7c72;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.it-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 13px;
+  margin-bottom: 23px;
+}
+
+.it-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 0 13px;
+  border: 1px solid #d7e2da;
+  border-radius: 10px;
+  background: #fff;
+  color: #6b7c72;
+}
+
+.it-search svg {
+  flex-shrink: 0;
+}
+
+.it-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #263b30;
+  font: inherit;
+  font-size: 13px;
+}
+
+.it-filters select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 11px 13px;
+  border: 1px solid #d7e2da;
+  border-radius: 10px;
+  background: #fff;
+  color: #263b30;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.it-search:focus-within,
+.it-filters select:focus {
+  border-color: #16845b;
+  box-shadow: 0 0 0 3px rgba(22, 132, 91, 0.1);
+}
+
+.it-issue-list {
+  display: grid;
+  gap: 16px;
+}
+
+.it-issue-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e1e9e3;
+  border-radius: 14px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.it-issue-card:hover {
+  border-color: #b8d9c5;
+  box-shadow: 0 4px 15px rgba(38, 59, 48, 0.04);
+}
+
+.it-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.it-card-top > div:first-child {
+  min-width: 0;
+}
+
+.it-issue-category {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: #f0f5f1;
+  color: #486454;
+  font-size: 11px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.it-card-top h3 {
+  margin: 9px 0 7px;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.it-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 0;
+  color: #6b7c72;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.it-location svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.it-status {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  max-width: 230px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #fff4dd;
+  color: #946200;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.it-status-active {
+  background: #fff4dd;
+  color: #946200;
+}
+
+.it-status-resolved {
+  background: #e8f5ee;
+  color: #116b49;
+}
+
+.it-status-closed {
+  background: #fdecec;
+  color: #b42318;
+}
+
+.it-progress-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 10px;
+  color: #52675b;
+  font-size: 12px;
+}
+
+.it-progress-heading strong {
+  color: #16845b;
+  font-size: 12px;
+}
+
+.it-progress-track {
+  width: 100%;
+  height: 8px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e8eee9;
+}
+
+.it-progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #16845b;
+  transition: width 0.3s ease;
+}
+
+.it-timeline {
+  display: grid;
+  gap: 0;
+  margin: 0 0 20px;
+}
+
+.it-timeline-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+  padding-bottom: 20px;
+}
+
+.it-timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.it-timeline-step:not(:last-child)::before {
+  position: absolute;
+  top: 29px;
+  bottom: 0;
+  left: 13px;
+  width: 2px;
+  background: #dce8df;
+  content: "";
+}
+
+.it-timeline-marker {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dce8df;
+  border-radius: 50%;
+  background: #fff;
+  color: #87958c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.it-timeline-step.completed .it-timeline-marker {
+  border-color: #16845b;
+  background: #e8f5ee;
+  color: #116b49;
+  font-size: 16px;
+}
+
+.it-timeline-step.current .it-timeline-marker {
+  border: 2px solid #16845b;
+  background: #fff;
+  color: #16845b;
+}
+
+.it-timeline-step.completed:not(:last-child)::before {
+  background: #9acbb0;
+}
+
+.it-timeline-step strong {
+  display: block;
+  margin: 4px 0 5px;
+  color: #344b3c;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.it-timeline-step p {
+  margin: 0;
+  color: #6b7c72;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.it-team-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border: 1px solid #e1e9e3;
+  border-radius: 10px;
+  background: #f6f9f7;
+  color: #52675b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.it-team-info svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #16845b;
+}
+
+.it-team-info strong {
+  color: #263b30;
+  overflow-wrap: anywhere;
+}
+
+.it-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 16px;
+  border-top: 1px solid #edf1ee;
+}
+
+.it-card-footer > span {
+  color: #87958c;
+  font-size: 11px;
+}
+
+.it-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 38px 20px;
+  border: 1px dashed #d7e2da;
+  border-radius: 12px;
+  color: #6b7c72;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.it-empty > svg {
+  color: #16845b;
+  font-size: 27px;
+}
+
+.it-empty h3 {
+  margin: 0;
+  color: #263b30;
+  font-size: 17px;
+}
+
+.it-empty p {
+  margin: 0 0 6px;
+}
+
+.it-error {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid #f0c9c5;
+  border-radius: 10px;
+  background: #fff0ef;
+  color: #b42318;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .it-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .issue-tracking-page {
+    padding: 24px 16px 40px;
+  }
+
+  .it-header {
+    padding: 22px;
+  }
+
+  .it-header-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 23px;
+  }
+
+  .it-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .it-list-section {
+    padding: 18px;
+  }
+
+  .it-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .it-card-top {
+    flex-direction: column;
+  }
+
+  .it-status {
+    max-width: 100%;
+  }
+
+  .it-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .issue-tracking-page {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .it-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .it-summary article {
+    padding: 16px;
+  }
+
+  .it-issue-card {
+    padding: 17px;
+  }
+
+  .it-list-section {
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .it-issue-card,
+  .it-progress-fill {
+    transition: none;
+  }
+}
