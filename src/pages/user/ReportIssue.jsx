@@ -16,10 +16,14 @@ import {
   createIssue,
   createNotification,
 } from "../../services/civicPulseService";
+
 import {
   uploadMedia as uploadCloudinaryMedia,
 } from "../../services/cloudinaryService";
+
 import "./ReportIssue.css";
+
+const ADMIN_USER_ID = "admin-1";
 
 const initialForm = {
   title: "",
@@ -42,7 +46,6 @@ const allowedTypes = [
 function getFriendlyError(error, fallback) {
   const message = error?.message || "";
 
-  // Keep raw Cloudinary and server error messages out of the UI.
   if (
     /cloudinary|api[_ ]key|upload preset|unsigned|http|axios|network error|failed to fetch|request failed|internal server error|forbidden|unauthorized/i.test(
       message
@@ -51,7 +54,6 @@ function getFriendlyError(error, fallback) {
     return fallback;
   }
 
-  // Preserve helpful validation messages from the upload service.
   if (
     /please select|supported formats|must be \d+ MB|internet connection/i.test(
       message
@@ -202,7 +204,9 @@ function ReportIssue() {
 
       if (media) {
         showMessage(
-          `Uploading your ${media.type.startsWith("video/") ? "video" : "image"}...`,
+          `Uploading your ${
+            media.type.startsWith("video/") ? "video" : "image"
+          }...`,
           "info"
         );
 
@@ -263,14 +267,16 @@ function ReportIssue() {
 
       try {
         createdIssue = await createIssue(issue);
-      } catch {
+      } catch (error) {
+        console.error("Issue creation failed:", error);
+
         showMessage(
           "Your report couldn't be saved. Please try again."
         );
         return;
       }
 
-      // A notification failure must not undo a saved report.
+      // Notify the resident.
       try {
         await createNotification({
           userId: String(user.id),
@@ -283,12 +289,31 @@ function ReportIssue() {
         });
       } catch (notificationError) {
         console.error(
-          "Report saved, but notification creation failed:",
+          "Resident notification creation failed:",
+          notificationError
+        );
+      }
+
+      // Notify the admin about the new report.
+      try {
+        await createNotification({
+          userId: ADMIN_USER_ID,
+          issueId: String(createdIssue.id),
+          title: "New issue report received",
+          message: `A resident has reported "${createdIssue.title}". Please review the issue.`,
+          type: "new_issue_report",
+          read: false,
+          createdAt: new Date().toISOString(),
+        });
+      } catch (notificationError) {
+        console.error(
+          "Admin notification creation failed:",
           notificationError
         );
       }
 
       setSubmitted(true);
+
       showMessage(
         "Your issue has been submitted for admin review.",
         "success"
@@ -299,14 +324,19 @@ function ReportIssue() {
       setPreviewUrl("");
 
       const input = document.getElementById("report-media");
-      if (input) input.value = "";
+
+      if (input) {
+        input.value = "";
+      }
 
       window.setTimeout(() => {
         navigate(`/issues/${createdIssue.id}`, {
           replace: true,
         });
       }, 1200);
-    } catch {
+    } catch (error) {
+      console.error("Report submission failed:", error);
+
       showMessage(
         "Something went wrong while submitting your report. Please try again."
       );
@@ -566,6 +596,7 @@ function ReportIssue() {
                 ) : (
                   <FiAlertCircle />
                 )}
+
                 {message}
               </div>
             )}
